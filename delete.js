@@ -9,7 +9,7 @@
 
 function removeMovie(k,n){
 	
-var x = document.getElementById('showMovies');
+// var x = document.getElementById('showMovies');
 
 var movieList = `<table class="table table-dark" id="tbUser">
   <thead>
@@ -32,5 +32,7 @@ for(i=0;i<list[n].movies.length;i++){
 	} 
 	movieList += `</tbody>
 </table>`;
-	x.innerHTML = movieList ;
+
+$("#showMovies").html(movieList);
+	// x.innerHTML = movieList ;
 }

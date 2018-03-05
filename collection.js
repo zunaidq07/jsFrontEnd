@@ -1,7 +1,4 @@
  function addToList(id,movieName,listName){
- 	var movie = document.getElementById('movieTitle');
- 	console.log("addToList");
- 	console.log("new movie is:"+ movieName);
 	for(i=0;i<list.length;i++){
 
 		if(list[i].title == listName){
@@ -10,17 +7,15 @@
 			}
 
 	}
-	var btn = document.getElementById(`cid${id}`);
 
-	btn.innerHTML = `<p>Added...</p>`;
+	$(`#cid${id}`).html("Added...");
 }
 
 
 
+
 function collectionList(str){
-	var lists = document.getElementById('lists');
-	// lists.innerHTML = "jhkjSf";
-	//addNewList(str)
+	// var lists = document.getElementById('lists');
 	var htmlString = `<ul>`;
 	if(list.length != 0){
 		htmlString += `<li><button type="button" class="btn btn-primary" data-toggle="modal" 
@@ -37,19 +32,20 @@ function collectionList(str){
 		htmlString += `<p>you have not created any watchlist</p>`;
 		htmlString += `<button type="button" class="btn btn-primary" data-toggle="modal" 
 		data-target="#myModal2" data-dismiss="modal">Create New Watchlist</button>`;
-		// addToList('${i}','${str}','${list[i].title}');
+		
 	}
 	htmlString += `</ul>`;
 
-	lists.innerHTML = htmlString;
+	
+	$("#lists").html(htmlString);
 }
 
 function addNewList(str){
-	var newWatchlist = document.getElementById('newWatchList').value;
+	var newWatchlist = $("#newWatchList").val();
+	
 	console.log(str);
-	var modalBody = document.getElementById('hideModal');
 
-	modalBody.innerHTML = `<p>Watchlist Created</p>`;
+	$("#hideModal").html("<p>Watchlist Created</p>");
 	count++;
 	var dict = {};
 
@@ -61,7 +57,7 @@ function addNewList(str){
 
 }
 function view(){
-	var modal = document.getElementById('hideModal');
+	
 
 	var htmlString = `<label>Enter Name of Your collection:</label>
 
@@ -71,24 +67,25 @@ function view(){
     				  class="btn btn-default" onclick="addNewList()">Submit</button>`
 
 
-
-    modal.innerHTML = htmlString;
+    $("#hideModal").html(htmlString);
+   
 }
 function displayList(){
 	console.log("name of list is here");
-	var  modal3 = document.getElementById('show');
+	
 	var totalLists = `<ol>`;
 	for(i=0;i<list.length;i++){
 		 totalLists += `<li><button type="button" class="btn btn-danger" data-toggle="modal" 
 		data-target="#myModal4" data-dismiss="modal" onclick="displayCollection('${i}')">${list[i].title}</button></li>`;
 	}
 	totalLists += `</li>`;
-	modal3.innerHTML = totalLists;
+	$("#show").html(totalLists);
+	
 
 }
 
 function displayCollection(n){
-	var  modal4 = document.getElementById('showMovies');
+	
 	var movieList = `<table class="table table-dark" id="tbUser">
   <thead>
     <tr>
@@ -110,7 +107,8 @@ function displayCollection(n){
 	} 
 	movieList += `</tbody>
 </table>`;
-	modal4.innerHTML = movieList ;
+	$("#showMovies").html(movieList);
+	
 }
 
 

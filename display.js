@@ -16,5 +16,5 @@ function renderHTML(data){
 				</div>
 			</div>`
 			}	
-	movieContainer.innerHTML = result;
+	$("#movieContainer").html(result);
 }
