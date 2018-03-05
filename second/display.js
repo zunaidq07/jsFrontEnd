@@ -5,7 +5,7 @@ function renderHTML(data){
 		result+=`<div class="row">
 					<div class="col-sm-3">
 					
-					<div class="card" style="width: 18rem;height:420px;padding:30px;">
+					<div class="card" style="width: 18rem;">
   						<img src="https://image.tmdb.org/t/p/w500/${data[i].poster_path}" height="200px">
 						  <div class="card-body">
 						    <h5 class="card-title" >${data[i].title}</h5>

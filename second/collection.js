@@ -89,12 +89,11 @@ function displayList(){
 
 function displayCollection(n){
 	var  modal4 = document.getElementById('showMovies');
-	var movieList = `<table class="table table-dark" id="tbUser">
+	var movieList = `<table class="table table-dark">
   <thead>
     <tr>
       <th scope="col">#</th>
       <th scope="col">Movie</th>
-      <th></th>
     </tr>
   </thead>
   <tbody>`;
@@ -104,7 +103,6 @@ function displayCollection(n){
 		movieList += `<tr>
       <td>${i+1}</td>
       <td>${list[n].movies[i]}</td>
-      <td><button onclick="removeMovie('${i}','${n}')">Remove</button></td>
     </tr>`;
       
 	} 
@@ -112,8 +110,6 @@ function displayCollection(n){
 </table>`;
 	modal4.innerHTML = movieList ;
 }
-
-
 
 
 
